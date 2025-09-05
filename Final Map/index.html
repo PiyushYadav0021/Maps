@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Map Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Sidebar -->
   <div class="sidebar">
@@ -34,82 +36,132 @@
 
   <!-- Main Content -->
   <div class="main">
-    <div class="header">
+    <!-- Top Navigation Bar -->
+<header class="top-nav">
+  <div class="logo">Piyush Maps</div>
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Pricing</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="auth-buttons">
+    <button class="login-btn">Login</button>
+    <button class="signup-btn">Sign Up</button>
+  </div>
+</header>
+
+    <!-- <div class="header">
       <div class="icon"></div>
       <div class="icon"></div>
-    </div>
+    </div> -->
     <div class="grid" id="mapGrid">
-      <div class="card" id="indiaCard">
-        <img src="india.svg" alt="India">
+      <div class="card" data-svg="india-outline.svg">
+        <img src="india-outline.svg" alt="India">
         <p>India</p>
       </div>
-      <div class="card">
-        <img src="images/India Regular.png" alt="India Regular">
+      <div class="card" data-svg="mapsvg/india-outline.svg" >
+        <img src="mapsvg/india-outline.svg" alt="India Regular">
         <p>India Regular</p>
       </div>
-      <div class="card">
-        <img src="images/district.png" alt="Districts of India">
-        <p>Districts of India</p>
-      </div>
-      <div class="card">
-        <img src="images/consittuency.png" alt="Constituencies of India">
-        <p>Constituencies of India</p>
-      </div>
-      <div class="card">
-        <img src="images/world.png" alt="World">
-        <p>World</p>
-      </div>
-      <div class="card">
-        <img src="images/USA.png" alt="USA">
-        <p>USA</p>
-      </div>
-      <div class="card">
-        <img src="images/europe.png" alt="Europe">
+      <div class="card" data-svg="mapsvg/europe.svg">
+        <img src="mapsvg/europe.svg" alt="Europe">
         <p>Europe</p>
       </div>
-      <div class="card">
-        <img src="images/Africa.png" alt="Africa">
+      <div class="card" data-svg="mapsvg/africa.svg">
+        <img src="mapsvg/africa.svg" alt="Africa">
         <p>Africa</p>
       </div>
-      <div class="card">
-        <img src="images/asia.png" alt="Asia">
-        <p>Asia</p>
+      <div class="card" data-svg="">
+        <img src="mapsvg/district.png" alt="Districts of India">
+        <p>Districts of India</p>
       </div>
-      <div class="card">
-        <img src="images/north america.png" alt="Asia">
-        <p>Asia</p>
+      <div class="card" data-svg="">
+        <img src="mapsvg/consittuency.png" alt="Constituencies of India">
+        <p>Constituencies of India</p>
       </div>
-      <div class="card">
-        <img src="images/Ocienia.png" alt="Oceania">
-        <p>Oceania</p>
+      <div class="card" data-svg="mapsvg/worldIndiaHigh.svg">
+        <img src="mapsvg/worldIndiaHigh.svg" alt="World">
+        <p>World</p>
       </div>
-      <div class="card">
-        <img src="images/South america.png" alt="South America">
-        <p>South America</p>
-      </div>
-      <div class="card">
-        <img src="images/South asia.png" alt="South Asia">
-        <p>South Asia</p>
-      </div>
-      <div class="card">
-        <img src="images/United India.png" alt="United India">
-        <p>United India</p>
-      </div>
-      <div class="card">
-        <img src="images/USA.png" alt="Asia">
+      <div class="card" data-svg="mapsvg/us.svg">
+        <img src="mapsvg/us.svg" alt="USA">
         <p>USA</p>
       </div>
-      <div class="card">
-        <img src="images/west bengal.png" alt="United Benagal">
+      
+      <div class="card" data-svg="mapsvg/asiaHigh.svg">
+        <img src="mapsvg/asiaHigh.svg" alt="Asia">
+        <p>Asia</p>
+      </div>
+      <div class="card" data-svg="">
+        <img src="mapsvg/north america.png" alt="Asia">
+        <p>Asia</p>
+      </div>
+      <div class="card" data-svg="">
+        <img src="mapsvg/Ocienia.png" alt="Oceania">
+        <p>Oceania</p>
+      </div>
+      <div class="card" data-svg="">
+        <img src="v/South america.png" alt="South America">
+        <p>South America</p>
+      </div>
+      <div class="card" data-svg="">
+        <img src="mapsvg/South asia.png" alt="South Asia">
+        <p>South Asia</p>
+      </div>
+      <div class="card" data-svg="">
+        <img src="mapsvg/United India.png" alt="United India">
+        <p>United India</p>
+      </div>
+      <div class="card" data-svg="">
+        <img src="mapsvg/USA.png" alt="Asia">
+        <p>USA</p>
+      </div>
+      <div class="card" data-svg="">
+        <img src="mapsvg/west bengal.png" alt="United Benagal">
         <p>United Bengal</p>
       </div>
-      <div class="card">
-        <img src="images/westeros.png" alt="westeros">
+      <div class="card" data-svg="">
+        <img src="mapsvg/westeros.png" alt="westeros">
         <p>westeros</p>
       </div>
     </div>
+  </div><!-- Fullscreen Modal -->
+  <div id="editorModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Edit Map</h2>
+  
+      <!-- Editing tools -->
+      <label>Fill Color: 
+        <input type="color" id="fillColor" value="#66ccff">
+      </label>
+      <label>Stroke Color: 
+        <input type="color" id="strokeColor" value="#000000">
+      </label>
+      <label>Stroke Width: 
+        <input type="number" id="strokeWidth" value="1" min="1" max="10">
+      </label>
+      <button id="downloadBtn">Download SVG</button>
+  
+     <!-- Legend Tools -->
+<div class="legend-tools">
+  <h3>Legend</h3>
+  <div id="legendList"></div>
+  <button id="addLegendBtn">➕ Add Legend</button>
+</div>
+
+  
+      <!-- Map container -->
+      <div class="map-container" id="mapContainer">
+        <!-- SVG will be loaded here -->
+      </div>
+    </div>
   </div>
+  
+
 
   <script src="script.js"></script>
 </body>
+
 </html>

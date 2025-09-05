@@ -102,3 +102,13 @@ body {
   height: auto;
   cursor: pointer;
 }
+.color-legend p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+.color-legend input {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
